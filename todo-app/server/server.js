@@ -10,6 +10,8 @@ app.use(express.json());
 
 app.use("/api/todos", require("./routes/todos"));
 
+app.use("/api/users", require("./routes/users"));
+
 mongoose
   .connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
