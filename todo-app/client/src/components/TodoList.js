@@ -30,11 +30,11 @@ const TodoList = () => {
     }
   };
 
-  const toggleComplete = async (id) => {
+  const toggleComplete = async (id, completed) => {
     try {
       const res = await axios.patch(`http://localhost:5000/api/todos/${id}`, {
-        completed: true,
-      });
+        completed,
+      }); // Ensure correct URL
       setTodos(todos.map((todo) => (todo._id === id ? res.data : todo)));
     } catch (err) {
       console.error(err.message); // Log any errors

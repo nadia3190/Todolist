@@ -14,7 +14,7 @@ const TodoItem = ({ todo, toggleComplete, deleteTodo, updateTodo }) => {
       <input
         type="checkbox"
         checked={todo.completed}
-        onChange={() => toggleComplete(todo._id)}
+        onChange={() => toggleComplete(todo._id, !todo.completed)}
       />
       {isEditing ? (
         <input
