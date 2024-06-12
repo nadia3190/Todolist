@@ -8,7 +8,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use("/api/todos", require("./routes/todos"));
+app.use("/home", require("./routes/todos"));
 
 app.use("/api/users", require("./routes/users"));
 

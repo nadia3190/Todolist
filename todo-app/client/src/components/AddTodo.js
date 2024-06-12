@@ -2,15 +2,21 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const AddTodo = ({ addTodo }) => {
-  const [title, setTitle] = useState(""); // State to manage the title of the new todo
-
+  const [title, setTitle] = useState("");
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
+      const token = localStorage.getItem("token");
+      if (!token) throw new Error("No token found");
+
       // Sending a POST request to add a new todo
-      const res = await axios.post("http://localhost:5000/api/todos", {
-        title,
-      });
+      const res = await axios.post(
+        "http://localhost:5000/home/api/todos",
+        { title },
+        {
+          headers: { "x-auth-token": token },
+        }
+      );
       addTodo(res.data);
       setTitle("");
     } catch (err) {

@@ -6,10 +6,14 @@ const {
   updateTodo,
   deleteTodo,
 } = require("../controllers/todoController");
+const auth = require("../middleware/auth");
 
-router.post("/", createTodo);
+router.post("/api/todos", auth, createTodo);
 
-router.get("/", getTodos);
-router.patch("/:id", updateTodo);
-router.delete("/:id", deleteTodo);
+router.get("/api/todos", auth, getTodos);
+
+router.patch("/api/todos/:id", auth, updateTodo);
+
+router.delete("/api/todos/:id", auth, deleteTodo);
+
 module.exports = router;
