@@ -13,6 +13,7 @@ const TodoItem = ({ todo, toggleComplete, deleteTodo }) => {
       >
         {todo.title}
       </span>
+      <button onClick={() => deleteTodo(todo._id)}>Delete</button>
     </div>
   );
 };

@@ -30,11 +30,35 @@ const TodoList = () => {
     }
   };
 
+  const toggleComplete = async (id) => {
+    try {
+      const res = await axios.patch(`http://localhost:5000/api/todos/${id}`, {
+        completed: true,
+      });
+      setTodos(todos.map((todo) => (todo._id === id ? res.data : todo)));
+    } catch (err) {
+      console.error(err.message); // Log any errors
+    }
+  };
+
+  const deleteTodo = async (id) => {
+    try {
+      await axios.delete(`http://localhost:5000/api/todos/${id}`); // Ensure correct URL
+      setTodos(todos.filter((todo) => todo._id !== id));
+    } catch (err) {
+      console.error(err.message); // Log any errors
+    }
+  };
   return (
     <div>
       <AddTodo addTodo={addTodo} />
       {todos.map((todo) => (
-        <TodoItem key={todo._id} todo={todo} />
+        <TodoItem
+          key={todo._id}
+          todo={todo}
+          toggleComplete={toggleComplete}
+          deleteTodo={deleteTodo}
+        />
       ))}
     </div>
   );
