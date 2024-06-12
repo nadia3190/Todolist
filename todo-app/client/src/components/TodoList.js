@@ -40,6 +40,17 @@ const TodoList = () => {
       console.error(err.message); // Log any errors
     }
   };
+  // Function to update a todo
+  const updateTodo = async (id, title) => {
+    try {
+      const res = await axios.patch(`http://localhost:5000/api/todos/${id}`, {
+        title,
+      }); // Ensure correct URL
+      setTodos(todos.map((todo) => (todo._id === id ? res.data : todo)));
+    } catch (err) {
+      console.error(err.message); // Log any errors
+    }
+  };
 
   const deleteTodo = async (id) => {
     try {
@@ -58,6 +69,7 @@ const TodoList = () => {
           todo={todo}
           toggleComplete={toggleComplete}
           deleteTodo={deleteTodo}
+          updateTodo={updateTodo}
         />
       ))}
     </div>
