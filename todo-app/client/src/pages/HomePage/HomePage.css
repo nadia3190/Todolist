@@ -1,15 +1,20 @@
 .homepage-container {
     text-align: center;
     padding: 50px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .homepage-container h1 {
-    font-size: 3em;
+    font-size: 2em;
     margin-bottom: 20px;
 }
 
 .homepage-container p {
-    font-size: 1.2em;
+    font-size: 2em;
     margin-bottom: 20px;
 }
 
@@ -17,6 +22,7 @@
     color: #ff69b4;
     text-decoration: none;
     font-weight: bold;
+    font-size: larger;
 }
 
 .homepage-container a:hover {

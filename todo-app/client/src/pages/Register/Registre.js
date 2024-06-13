@@ -36,6 +36,7 @@ const RegisterPage = () => {
         </div>
       ) : (
         <form onSubmit={onSubmit}>
+          <h1>Register</h1>
           <div>
             <label>Name</label>
             <input
