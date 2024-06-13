@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const { check, validationResult } = require("express-validator");
-const userController = require("../controllers/userController"); // Assurez-vous que le chemin est correct
 
+const userController = require("../controllers/userController");
 // Route pour l'inscription
 router.post(
   "/register",
