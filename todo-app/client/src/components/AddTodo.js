@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import "./style.css";
 
 const AddTodo = ({ addTodo }) => {
   const [title, setTitle] = useState("");
@@ -25,15 +28,19 @@ const AddTodo = ({ addTodo }) => {
   };
 
   return (
-    <form onSubmit={onSubmit}>
-      <input
-        type="text"
-        name="title"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-      />
-      <button type="submit">Add Todo</button>
-    </form>
+    <div className="add-todo-form">
+      <form onSubmit={onSubmit}>
+        <input
+          type="text"
+          name="title"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+        />
+        <button type="submit">
+          <FontAwesomeIcon icon={faPlus} />
+        </button>
+      </form>
+    </div>
   );
 };
 

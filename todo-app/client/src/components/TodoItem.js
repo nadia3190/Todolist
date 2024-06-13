@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEdit, faTrash, faSave } from "@fortawesome/free-solid-svg-icons";
 
 const TodoItem = ({ todo, toggleComplete, deleteTodo, updateTodo }) => {
   const [isEditing, setIsEditing] = useState(false);
@@ -30,11 +32,20 @@ const TodoItem = ({ todo, toggleComplete, deleteTodo, updateTodo }) => {
         </span>
       )}
 
-      <button onClick={() => deleteTodo(todo._id)}>Delete</button>
+      <button onClick={() => deleteTodo(todo._id)}>
+        {" "}
+        <FontAwesomeIcon icon={faTrash} />
+      </button>
       {isEditing ? (
-        <button onClick={handleUpdate}>Save</button>
+        <button onClick={handleUpdate}>
+          {" "}
+          <FontAwesomeIcon icon={faSave} />
+        </button>
       ) : (
-        <button onClick={() => setIsEditing(true)}>Update</button>
+        <button onClick={() => setIsEditing(true)}>
+          {" "}
+          <FontAwesomeIcon icon={faEdit} />
+        </button>
       )}
     </div>
   );

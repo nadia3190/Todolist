@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const HomePage = () => {
   return (
-    <div>
+    <div className="homepage-container">
       <h1>Welcome to Todo List App</h1>
       <Link to="/register">Register</Link>
       <br />

@@ -1,0 +1,33 @@
+.add-todo-form {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.add-todo-form input {
+    padding: 10px;
+    margin-left: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex-grow: 1;
+}
+
+.add-todo-form button {
+    background-color: #ff69b4;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 15px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.add-todo-form button:hover {
+    background-color: #ff1493;
+}
+
+.add-todo-form button svg {
+    margin-right: 0;
+}

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import "./Login.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -19,13 +20,13 @@ const Login = () => {
       localStorage.setItem("token", res.data.token);
       navigate("/home");
     } catch (err) {
-      setError(err.response.data.errors[0].msg); // Affiche l'erreur
+      setError(err.response.data.errors[0].msg);
       console.error(err.response.data);
     }
   };
 
   return (
-    <div>
+    <div className="form-container">
       <h1>Login</h1>
       {error && <p style={{ color: "red" }}>{error}</p>}
       <form onSubmit={handleSubmit}>
