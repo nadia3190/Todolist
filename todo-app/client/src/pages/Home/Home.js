@@ -4,9 +4,11 @@ import "./Home.css";
 import TodoList from "../../components/TodoList";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
+
 const Home = () => {
   const navigate = useNavigate();
   const userName = localStorage.getItem("userName");
+
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (!token) {
